@@ -13,13 +13,13 @@ public:
     }
 };
 
-void inorder(Node *node, vector<int> &res){
+void preorder(Node *node, vector<int> &res){
     if(node == nullptr){
         return;
     }
     res.push_back(node->data);
-    inorder(node->left,res);
-    inorder(node->right, res);
+    preorder(node->left,res);
+    preorder(node->right, res);
 }
 
 int main() {
@@ -33,7 +33,7 @@ int main() {
     root->right->right = new Node(7);
 
     vector<int> res;
-    inorder(root,res);
+    preorder(root,res);
     for(int node : res) cout << node << " ";
     // Output : 1 2 4 5 3 6 7
   
