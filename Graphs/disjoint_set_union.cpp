@@ -28,5 +28,23 @@ void Union(int a, int b){
 
 int main(){
 
+    int n,k;
+    cin >> n >> k;
+
+    for(int i = 1; i <= n; i++) make(i);
+    
+    while(k--){
+        int u, v;
+        cin >> u >> v;
+        Union(u,v);
+    }
+
+    int conn_ct = 0;
+    for(int i = 1; i <= n; i++){
+        if(find(i) == i){
+            conn_ct++;
+        }
+    }
+
     return 0;
 }
